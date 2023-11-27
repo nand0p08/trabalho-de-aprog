@@ -52,6 +52,8 @@ public class Main {
         AutocarroMaisProximo(matrizPlaneamento, autocarro, dia, distancias,nomesCidades);
 
     }
+
+    //Exercicio A
     public static int[][] leituraPlaneamento() {
         Scanner scanner = new Scanner(System.in);
 
@@ -71,10 +73,10 @@ public class Main {
 
         return matrizPlaneamento;
     }
+    //Exercicio B
 
     public static void outputMatriz(int[][] matriz, String descricao, String dataInicio) {
         System.out.println("b)");
-        System.out.println (descricao + ";" + dataInicio);
         for (int i = 0; i < matriz.length; i++) {
             System.out.print("Bus" + i + " : ");
             for (int j = 0; j < matriz[0].length; j++) {
@@ -83,8 +85,10 @@ public class Main {
             System.out.println();
         }
     }
-
+    //Exercicio C
     public static int[][] KmPercorrer(int[][] matrizPlaneamento) {
+        //calculo C
+
         int L = matrizPlaneamento.length;
         int C = matrizPlaneamento[0].length;
         int[][] KmPercorrer = new int[L][C - 1];
@@ -102,6 +106,7 @@ public class Main {
         return KmPercorrer;
     }
     public static void outputKmPercorrer(int[][] KmPercorrer) {
+        //output C
         System.out.println("c)\n");
         for (int i = 0; i < KmPercorrer.length; i++) {
             System.out.print("Bus" + i + " : 0");
@@ -113,6 +118,7 @@ public class Main {
     }
 
     public static int[] calcularTotalKmPorAutocarro(int[][] KmPercorrer) {
+        //calculo D
         int L = KmPercorrer.length;
         int C = KmPercorrer[0].length;
 
@@ -128,6 +134,7 @@ public class Main {
     }
 
     public static void outputTotalKmPorAutocarro(int[] totalKmPorAutocarro) {
+        //output D
         System.out.println("d)");
         for (int i = 0; i < totalKmPorAutocarro.length; i++) {
             System.out.println("Bus" + i + " : " + totalKmPorAutocarro[i] + " km");
@@ -135,6 +142,7 @@ public class Main {
     }
 
     public static int calcularTotalKmFrota(int[][] KmPercorrer) {
+        //calculo E
         int L = KmPercorrer.length;
         int C = KmPercorrer[0].length;
 
@@ -150,10 +158,12 @@ public class Main {
     }
 
     public static void outputTotalKmFrota(int totalKmFrota) {
+        //output E
         System.out.println("e)\nTotal de km a percorrer pela frota = " + totalKmFrota + " km");
     }
 
     public static int[] maxKmPorDia(int[][] KmPercorrer) {
+        //maxkm F
         int L = KmPercorrer.length;
         int C = KmPercorrer[0].length;
 
@@ -171,6 +181,7 @@ public class Main {
     }
 
     public static int[] encontrarDiasComMaxKm(int[] maxKmPorDia) {
+        //dias em que ocorre F
         int valorMaximo = maxKmPorDia[0];
 
         for (int i = 1; i < maxKmPorDia.length; i++) {
@@ -200,11 +211,9 @@ public class Main {
             }
         }
 
-        System.out.println("Máximo de kms num dia: (" + valorMaximo + " km), dias:");
-
         for (int j = 0; j < diasComMaxKm.length; j++) {
             if (diasComMaxKm[j] == 1) {
-                System.out.println(j+1);
+                System.out.println("Máximo de kms num dia: (" + valorMaximo + " km), dias: "+ "["+(j+1)+"]");
             }
         }
 
